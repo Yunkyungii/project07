@@ -1,0 +1,245 @@
+* {
+    outline: 1px solid #369;
+}
+
+root {
+    --mc: #16873e;
+    --sc: #98b101;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    height: 100px;
+    transition: 0.5s;
+}
+
+.header:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.header .inner {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: end;
+    color: #f9f9f9;
+
+}
+
+.header .inner h1 img {
+    width: 160px;
+    height: auto;
+}
+
+.header .inner .gnb>ul {
+    display: flex;
+    gap: 40px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.header .inner .gnb>ul>li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.header .inner .gnb>ul>li::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    transition: .5s;
+}
+
+
+.header .inner .gnb>ul>li:hover::before {
+    width: 100%;
+}
+
+.header .inner .service {
+    display: flex;
+    gap: 25px;
+    font-size: 26px;
+}
+
+.main_visual .itm {
+    position: relative;
+}
+
+.main_visual .itm h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 80px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #f9f9f9;
+    gap: 10px;
+    transition: 1s;
+    opacity: 0;
+}
+
+.main_visual .main_slide .slick-active h2 {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.main_visual .itm .btn {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-100px, 0);
+    color: #f9f9f9;
+    transition: 0.5s 1s;
+    opacity: 0;
+}
+
+.main_visual .main_slide .slick-active .btn {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+.main_visual .itm .btn a {
+    position: relative;
+}
+
+.main_visual .itm .btn a::before {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background: #f9f9f9;
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    transform: translate(0, -50%);
+}
+
+.main_visual .itm .btn a::after {
+    content: "";
+    width: 20px;
+    height: 1px;
+    background: #f9f9f9;
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    transform: translate(0, calc(-50% - 8px)) rotate(45deg);
+}
+
+.main_visual .bg1 {
+    height: 100vh;
+    background: url(../images/s1-bg-1_1.jpg) no-repeat center center/cover;
+}
+
+.main_visual .bg2 {
+    height: 100vh;
+    background: url(../images/s1-bg-1_2.jpg) no-repeat center center/cover;
+}
+
+.main_visual .bg3 {
+    height: 100vh;
+    background: url(../images/s1-bg-1_3.jpg) no-repeat center center/cover;
+}
+
+.main_visual .slick-dots {
+    position: absolute;
+    top: 50%;
+    right: calc((100% - 1200px)/2 + 15px);
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main_visual .slick-dots>* {}
+
+.main_visual .slick-dots li button {
+    padding: 3px;
+    font-size: 0;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent
+}
+
+.main_visual .slick-dots li.slick-active button {
+    border-color: #fff;
+    padding: 4px;
+    background-color: transparent;
+}
+
+.main_visual .dots {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+
+    display: flex;
+    gap: 30px;
+    transform: translate(-50%, 0);
+}
+
+.main_visual .dots li {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    width: auto;
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+
+.main_visual .dots li a {
+    display: block;
+    line-height: 50px;
+    z-index: 999;
+    padding: 0 15px;
+}
+
+.main_visual .dots li.on a {
+    color: #fff;
+}
+
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.main_visual .dots li.on circle {
+    stroke: #98b101;
+    stroke-width: 3;
+    fill: transparent;
+    stroke-dasharray: 630;
+    animation: stroke-ani 5s;
+}
+
+@keyframes stroke-ani {
+    from {
+        stroke-dashoffset: 630;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
