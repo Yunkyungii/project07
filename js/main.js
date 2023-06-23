@@ -33,7 +33,7 @@ $(function () {
 
     $('.main_slide').slick({
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3500,
         arrows: false,
         dots: true,
         pauseOnHover: false,
@@ -73,11 +73,14 @@ $(function () {
         $('.itm_slide').slick('slickGoTo', idx);
     });
 
+    $('.scr').on('click', function (e) {
+        e.preventDefault();
+        const st = $(this.hash).offset().top;
+        console.log(st);
+        $('html, body').animate({ scrollTop: st }, 600)
+    })
 
 
-    // $('.menu_list li').on('click', function () {
-    //     $(this).addClass('on').siblings().removeClass('on');
-    // });
 
 
 })
